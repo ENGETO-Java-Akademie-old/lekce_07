@@ -111,6 +111,29 @@ Proč ruční řešení po nějaké době přestane fungovat?
 
 - Řešení 
 
+
+#### Maven Wrapper
+
+Pokud pracujeme na více projektech, tak se často stane, že každý vyžaduje jinou verzi Maven. Mít nainstalované různé verze není uplně pohodlné. Vzniklo proto řešení, které zabalí celý Maven jako nástroj příkazové řádky a zajistí i stažení správné verze.
+
+a pak místo volání Maven přímo:
+```
+> mvn clean install
+```
+
+Budeme volat wrapper:
+```
+./mvnw.cmd clean install
+```
+
+Co je potřeba udělat?
+
+Stačí jednou na začátku projektu spustit inicializaci a pak vytvořené soubory wrapperu dát do gitu.
+
+```
+mvn -N io.takari:maven:wrapper
+```
+
 #### POM (Project Object Model)
 
 ```
